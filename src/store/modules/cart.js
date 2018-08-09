@@ -1,14 +1,24 @@
-export default {
-  state: {
+const state = {
     test: "test"
-  },
-  getters: {
+}
 
-  },
-  actions: {
+const getters = {
 
-  },
-  mutations: {
+}
 
-  },
+const actions = {
+  addItemToCart (){
+    console.log("actions!")
+  }
+}
+
+const mutations = {
+}
+
+export default {
+  state,
+  getters,
+  actions,
+  mutations,
+  namespaced: true  
 }

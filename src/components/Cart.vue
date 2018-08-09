@@ -1,13 +1,24 @@
 <template>
-  <button>Click!</button>
+  <button @click="onClickAdd()">Click!</button>
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 export default {
   name: 'cart',
   props: {
     msg: String
-  }
+  },
+  methods: {
+    ...mapActions({
+      addItemToCart: 'cart/addItemToCart'
+    }),
+    onClickAdd: function(){
+      this.addItemToCart()
+    }
+
+  },
 }
 </script>
 
