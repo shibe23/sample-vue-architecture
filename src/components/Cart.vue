@@ -12,13 +12,16 @@ export default {
   },
   methods: {
     ...mapActions({
-      addItemToCart: 'cart/addItemToCart'
+      addItemToCartAction: 'cart/addItemToCart'
     }),
     onClickAdd: function(){
-      this.addItemToCart()
+      this.addItemToCartAction()
     }
-
   },
+  mounted: async function(){
+    // Dispatch Acion
+    this.addItemToCartAction();
+  }
 }
 </script>
 

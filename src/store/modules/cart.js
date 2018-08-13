@@ -1,3 +1,5 @@
+import Ajax from '../../lib/ajax';
+
 const state = {
     test: "test"
 }
@@ -7,8 +9,12 @@ const getters = {
 }
 
 const actions = {
-  addItemToCart (){
+  async addItemToCart (){
     console.log("actions!")
+    const URL = "";
+    const ajax = new Ajax;
+    console.log(await ajax.get(URL));
+
   }
 }
 
