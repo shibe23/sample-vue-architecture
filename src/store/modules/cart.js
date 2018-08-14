@@ -1,7 +1,7 @@
 import Ajax from '../../lib/ajax';
 
 const state = {
-    test: "test"
+    data: {},
 }
 
 const getters = {
@@ -9,16 +9,20 @@ const getters = {
 }
 
 const actions = {
-  async addItemToCart (){
-    console.log("actions!")
+  async addItemToCart (context){
     const URL = "";
     const ajax = new Ajax;
-    console.log(await ajax.get(URL));
-
+    const result = await ajax.get(URL);
+    context.commit('updateData', result.data)
   }
 }
 
 const mutations = {
+  updateData(state, payload){
+    console.log(state)
+    console.log(payload)
+    state.data = payload;
+  }
 }
 
 export default {
