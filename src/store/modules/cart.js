@@ -19,8 +19,6 @@ const actions = {
 
 const mutations = {
   updateData(state, payload){
-    console.log(state)
-    console.log(payload)
     state.data = payload;
   }
 }
