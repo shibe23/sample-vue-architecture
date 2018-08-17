@@ -5,16 +5,20 @@
         <tr>
           <th>Name</th>
           <th>Price</th>
+          <th>Number</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="(record, index) in cart" :key="index">
           <td>{{ record.name }}</td>
           <td>{{ record.price }}</td>
+          <td><input type="text" class="input"/></td>
+          <td><button class="button is-primary" @click="onClickAdd()">add</button></td>
         </tr>
       </tbody>
     </table>
-    <button @click="onClickAdd()">Click!</button>
+    <button class="button">Check Out</button>
   </div>
 </template>
 
