@@ -34,7 +34,7 @@ export default {
   },
   data: function(){
     return {
-      buscket:[]
+      basket:[]
     }
   },
   computed: {
@@ -47,7 +47,7 @@ export default {
       addItemToCartAction: 'cart/addItemToCart'
     }),
     onClickAdd: function(index){
-      this.buscket.push([
+      this.basket.push([
         this.cart[index].name,
         this.cart[index].number,
       ]);
