@@ -14,10 +14,11 @@
           <td>{{ record.name }}</td>
           <td>{{ record.price }}</td>
           <td><input type="text" class="input"/></td>
-          <td><button class="button is-primary" @click="onClickAdd()">add</button></td>
+          <td><button class="button is-primary" @click="onClickAdd(index)">add</button></td>
         </tr>
       </tbody>
     </table>
+
     <button class="button">Check Out</button>
   </div>
 </template>
@@ -31,6 +32,11 @@ export default {
   props: {
     msg: String
   },
+  data: function(){
+    return {
+      buscket:[]
+    }
+  },
   computed: {
     ...mapState({
       cart: state => state.cart.data,
@@ -40,8 +46,11 @@ export default {
     ...mapActions({
       addItemToCartAction: 'cart/addItemToCart'
     }),
-    onClickAdd: function(){
-      this.addItemToCartAction()
+    onClickAdd: function(index){
+      this.buscket.push([
+        this.cart[index].name,
+        this.cart[index].number,
+      ]);
     }
   },
   mounted: async function(){
